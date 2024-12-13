@@ -1,0 +1,1658 @@
+#include <iostream>
+using namespace std;
+bool hasWon = false;
+
+//global variable
+//set up an empty string inventory using an array (10 slots)
+int money = 100;
+
+
+int playerhealth = 100;
+
+
+
+
+
+
+int main() {
+
+
+	 
+	system("color 20");
+	system("pause");
+	
+
+
+
+	int room = 1;
+	char choice;
+
+	cout << "welcome to klim" << endl;
+	do {
+		switch (room) {
+		case 1:
+			cout << "this is the begining of your journey, if you leave, you can choose to go to the lake or in to town do you wish to leave?(if you do go east)You can go (e)ast." << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 2;
+			else
+				cout << " i dont understand that" << endl;
+			break;
+		case 2:
+			cout << "you are almost to the cross road between the town, lake and forest.go (e)ast to get there." << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 3;
+			else
+				cout << " i dont understand that" << endl;
+			break;
+		case 3:
+			cout << "you are at the crossroad between the lake,town and forest.(it would be best to go in to town) you can go (s)outh or (n)orth or (w)est or (e)ast" << endl;
+			cin >> choice;
+			if (choice == 'w')
+				room = 2;
+			else if (choice == 'n')
+				room = 4;
+			else if (choice == 's')
+				room = 34;
+			else if (choice == 'e')
+				room = 50;
+			else
+				cout << " i dont understand that" << endl;
+			break;
+		case 4:
+			
+			cout << "you are on the path to the town its a long journey. you can go (s)outh or (n)orth" << endl;
+			cin >> choice;
+			if (choice == 'n')
+				room = 5;
+			else if (choice == 's')
+				room = 3;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 5:
+			cout << "as you pass by the gravel road to the town you feel the wind blow in your hair and makes you feel at peace. you can go (s)outh or (n)orth" << endl;
+			cin >> choice;
+			if (choice == 'n')
+				room = 6;
+			else if (choice == 's')
+				room = 4;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 6:
+			cout << "the wind keeps blowing but it doesnt bother you you start to see something in the distance. you can go (s)outh or (n)orth" << endl;
+			cin >> choice;
+			if (choice == 'n')
+				room = 7;
+			else if (choice == 's')
+				room = 5;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 7:
+			cout << "youre almost there, you smell a bakery and feel at home . you can go (s)outh or (n)orth" << endl;
+			cin >> choice;
+			if (choice == 'n')
+				room = 8;
+			else if (choice == 's')
+				room = 6;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 8:
+			cout << "youre finally here . you can go (s)outh,(w)est,(e)ast,(n)orth" << endl;
+			cin >> choice;
+			if (choice == 'n')
+				room = 9;
+			else if (choice == 's')
+				room = 7;
+			else if (choice == 'w')
+				room = 33;
+			else if (choice == 'e')
+				room = 22;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 9:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast,(n)orth " << endl;
+			cin >> choice;
+			if (choice == 'n')
+				room = 10;
+			else if (choice == 's')
+				room = 8;
+			else if (choice == 'w')
+				room = 30;
+			else if (choice == 'e')
+				room = 19;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 10:
+			cout << "the town is full of people and life with great smells ans sights. you can go (s)outh,(w)est,(e)ast,(n)orth " << endl;
+			cout << "it would be best to go to the bakery or shop to stock up on items" << endl;
+			cin >> choice;
+			if (choice == 'n')
+				room = 11;
+			else if (choice == 's')
+				room = 9;
+			else if (choice == 'w')
+				room = 25;
+			else if (choice == 'e')
+				room = 16;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 11:
+			cout << "theres the shop going west!. you can go (s)outh,(w)est,(e)ast " << endl;
+			cout << " you can also go east to explore the town" << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 10;
+			else if (choice == 'w')
+				room = 12;
+			else if (choice == 'e')
+				room = 13;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 12:
+			
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 11;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 13:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 16;
+			else if (choice == 'w')
+				room = 14;
+			else if (choice == 'e')
+				room = 11;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 14:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 17;
+			else if (choice == 'w')
+				room = 13;
+			else if (choice == 'e')
+				room = 14;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 15:
+			
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 18;
+			else if (choice == 'e')
+				room = 14;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 16:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 19;
+			else if (choice == 'n')
+				room = 13;
+			else if (choice == 'w')
+				room = 10;
+			else if (choice == 'e')
+				room = 17;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 17:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 20;
+			else if (choice == 'w')
+				room = 16;
+			else if (choice == 'e')
+				room = 18;
+			else if (choice == 'n')
+				room = 14;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 18:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 21;
+			else if (choice == 'w')
+				room = 17;
+			else if (choice == 'n')
+				room = 15;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 19:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 22;
+			else if (choice == 'w')
+				room = 9;
+			else if (choice == 'e')
+				room = 20;
+			else if (choice == 'n')
+				room = 16;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 20:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 23;
+			else if (choice == 'w')
+				room = 19;
+			else if (choice == 'e')
+				room = 21;
+			else if (choice == 'n')
+				room = 17;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 21:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 24;
+			else if (choice == 'w')
+				room = 20;
+			else if (choice == 'n')
+				room = 18;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 22:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 8;
+			else if (choice == 'e')
+				room = 23;
+			else if (choice == 'n')
+				room = 19;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 23:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 22;
+			else if (choice == 'e')
+				room = 24;
+			else if (choice == 'n')
+				room = 20;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 24:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 23;
+			else if (choice == 'n')
+				room = 21;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 25:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 26;
+			else if (choice == 'e')
+				room = 10;
+			else if (choice == 's')
+				room = 30;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 26:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 27;
+			else if (choice == 'e')
+				room = 25;
+			else if (choice == 's')
+				room = 29;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 27:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 26;
+			else if (choice == 's')
+				room = 28;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 28:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 29;
+			else if (choice == 's')
+				room = 31;
+			else if (choice == 'n')
+				room = 27;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 29:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 28;
+			else if (choice == 'e')
+				room = 30;
+			else if (choice == 'n')
+				room = 26;
+			else if (choice == 's')
+				room = 32;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 30:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 29;
+			else if (choice == 'e')
+				room = 8;
+			else if (choice == 'n')
+				room = 25;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 31:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'n')
+				room = 28;
+			else if (choice == 'e')
+				room = 32;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 32:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 31;
+			else if (choice == 'e')
+				room = 33;
+			else if (choice == 'n')
+				room = 29;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 33:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 32;
+			else if (choice == 'e')
+				room = 8;
+			else if (choice == 'n')
+				room = 30;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 34:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'n')
+				room = 3;
+			else if (choice == 's')
+				room = 35;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 35:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'n')
+				room = 34;
+			else if (choice == 's')
+				room = 36;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 36:
+			system("color e1");
+			system("pause");
+
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'n')
+				room = 35;
+			else if (choice == 's')
+				room = 37;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 37:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 38;
+			else if (choice == 'n')
+				room = 36;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 38:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 39;
+			else if (choice == 'e')
+				room = 37;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 39:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 's')
+				room = 40;
+			else if (choice == 'e')
+				room = 38;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 40:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 's')
+				room = 41;
+			else if (choice == 'n')
+				room = 39;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 41:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 's')
+				room = 42;
+			else if (choice == 'n')
+				room = 40;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 42:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 43;
+			else if (choice == 'n')
+				room = 41;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 43:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 44;
+			else if (choice == 'w')
+				room = 42;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 44:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 45;
+			else if (choice == 'w')
+				room = 43;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 45:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 46;
+			else if (choice == 'w')
+				room = 44;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 46:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'n')
+				room = 47;
+			else if (choice == 'w')
+				room = 45;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 47:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'n')
+				room = 48;
+			else if (choice == 's')
+				room = 46;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 48:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 's')
+				room = 47;
+			else if (choice == 'w')
+				room = 49;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 49:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 48;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 50:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'w')
+				room = 3;
+			else if (choice == 'e')
+				room = 51;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 51:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 52;
+			else if (choice == 'w')
+				room = 50;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 52:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 53;
+			else if (choice == 'w')
+				room = 51;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 53:
+			system("color 04");
+			system("pause");
+
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 54;
+			else if (choice == 'w')
+				room = 52;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 54:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 55;
+			else if (choice == 'w')
+				room = 53;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 55:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+
+			if (choice == 'e')
+				room = 56;
+			else if (choice == 'w')
+				room = 54;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 56:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 98;
+			else if (choice == 'w')
+				room = 55;
+			else if (choice == 'e')
+				room = 57;
+			else if (choice == 'n')
+				room = 90;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 57:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 99;
+			else if (choice == 'w')
+				room = 56;
+			else if (choice == 'e')
+				room = 58;
+			else if (choice == 'n')
+				room = 91;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 58:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 100;
+			else if (choice == 'w')
+				room = 57;
+			else if (choice == 'e')
+				room = 59;
+			else if (choice == 'n')
+				room = 92;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 59:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 101;
+			else if (choice == 'w')
+				room = 58;
+			else if (choice == 'e')
+				room = 60;
+			else if (choice == 'n')
+				room = 93;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 60:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 102;
+			else if (choice == 'w')
+				room = 59;
+			else if (choice == 'e')
+				room = 61;
+			else if (choice == 'n')
+				room = 94;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 61:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 103;
+			else if (choice == 'w')
+				room = 60;
+			else if (choice == 'e')
+				room = 62;
+			else if (choice == 'n')
+				room = 95;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 62:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 104;
+			else if (choice == 'w')
+				room = 61;
+			else if (choice == 'e')
+				room = 63;
+			else if (choice == 'n')
+				room = 96;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 63:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 105;
+			else if (choice == 'w')
+				room = 62;
+			else if (choice == 'e')
+				room = 64;
+			else if (choice == 'n')
+				room = 97;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 64:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 65;
+			else if (choice == 'w')
+				room = 63;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 65:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'town')
+				room = 7;
+			else if (choice == 'w')
+				room = 64;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 66:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 74;
+			else if (choice == 'e')
+				room = 67;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 67:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 75;
+			else if (choice == 'w')
+				room = 66;
+			else if (choice == 'e')
+				room = 68;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 68:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 76;
+			else if (choice == 'w')
+				room = 67;
+			else if (choice == 'e')
+				room = 69;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 69:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 77;
+			else if (choice == 'w')
+				room = 68;
+			else if (choice == 'e')
+				room = 70;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 70:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 78;
+			else if (choice == 'w')
+				room = 69;
+			else if (choice == 'e')
+				room = 71;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 71:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 79;
+			else if (choice == 'w')
+				room = 70;
+			else if (choice == 'e')
+				room = 72;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 72:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 80;
+			else if (choice == 'w')
+				room = 71;
+			else if (choice == 'e')
+				room = 73;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 73:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 81;
+			else if (choice == 'w')
+				room = 72;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 74:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 82;
+			else if (choice == 'e')
+				room = 75;
+			else if (choice == 'n')
+				room = 66;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 75:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 83;
+			else if (choice == 'w')
+				room = 74;
+			else if (choice == 'e')
+				room = 76;
+			else if (choice == 'n')
+				room = 67;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 76:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 84;
+			else if (choice == 'w')
+				room = 75;
+			else if (choice == 'e')
+				room = 77;
+			else if (choice == 'n')
+				room = 68;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 77:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 85;
+			else if (choice == 'w')
+				room = 76;
+			else if (choice == 'e')
+				room = 78;
+			else if (choice == 'n')
+				room = 69;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 78:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 86;
+			else if (choice == 'w')
+				room = 77;
+			else if (choice == 'e')
+				room = 79;
+			else if (choice == 'n')
+				room = 70;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 79:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 87;
+			else if (choice == 'w')
+				room = 78;
+			else if (choice == 'e')
+				room = 80;
+			else if (choice == 'n')
+				room = 71;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 80:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 88;
+			else if (choice == 'w')
+				room = 79;
+			else if (choice == 'e')
+				room = 81;
+			else if (choice == 'n')
+				room = 72;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 81:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 89;
+			else if (choice == 'w')
+				room = 80;
+			else if (choice == 'n')
+				room = 73;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 82:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 90;
+			else if (choice == 'e')
+				room = 83;
+			else if (choice == 'n')
+				room = 74;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 83:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 91;
+			else if (choice == 'w')
+				room = 82;
+			else if (choice == 'e')
+				room = 84;
+			else if (choice == 'n')
+				room = 75;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 84:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 92;
+			else if (choice == 'w')
+				room = 83;
+			else if (choice == 'e')
+				room = 85;
+			else if (choice == 'n')
+				room = 76;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 85:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 93;
+			else if (choice == 'w')
+				room = 84;
+			else if (choice == 'e')
+				room = 86;
+			else if (choice == 'n')
+				room = 77;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 86:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 94;
+			else if (choice == 'w')
+				room = 85;
+			else if (choice == 'e')
+				room = 87;
+			else if (choice == 'n')
+				room = 78;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 87:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 95;
+			else if (choice == 'w')
+				room = 86;
+			else if (choice == 'e')
+				room = 88;
+			else if (choice == 'n')
+				room = 79;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 88:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 96;
+			else if (choice == 'w')
+				room = 87;
+			else if (choice == 'e')
+				room = 89;
+			else if (choice == 'n')
+				room = 80;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 89:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 97;
+			else if (choice == 'w')
+				room = 88;
+			else if (choice == 'n')
+				room = 81;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 90:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 56;
+			else if (choice == 'e')
+				room = 91;
+			else if (choice == 'n')
+				room = 82;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 91:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 57;
+			else if (choice == 'w')
+				room = 90;
+			else if (choice == 'e')
+				room = 92;
+			else if (choice == 'n')
+				room = 83;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 92:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 58;
+			else if (choice == 'w')
+				room = 91;
+			else if (choice == 'e')
+				room = 93;
+			else if (choice == 'n')
+				room = 84;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 93:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 59;
+			else if (choice == 'w')
+				room = 92;
+			else if (choice == 'e')
+				room = 94;
+			else if (choice == 'n')
+				room = 85;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 94:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 60;
+			else if (choice == 'w')
+				room = 93;
+			else if (choice == 'e')
+				room = 95;
+			else if (choice == 'n')
+				room = 86;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 95:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 61;
+			else if (choice == 'w')
+				room = 94;
+			else if (choice == 'e')
+				room = 96;
+			else if (choice == 'n')
+				room = 87;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 96:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 62;
+			else if (choice == 'w')
+				room = 95;
+			else if (choice == 'e')
+				room = 97;
+			else if (choice == 'n')
+				room = 88;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 97:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 63;
+			else if (choice == 'w')
+				room = 96;
+			else if (choice == 'n')
+				room = 89;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 98:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 106;
+			else if (choice == 'e')
+				room = 99;
+			else if (choice == 'n')
+				room = 56;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 99:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 107;
+			else if (choice == 'w')
+				room = 98;
+			else if (choice == 'e')
+				room = 100;
+			else if (choice == 'n')
+				room = 57;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 100:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 108;
+			else if (choice == 'w')
+				room = 99;
+			else if (choice == 'e')
+				room = 101;
+			else if (choice == 'n')
+				room = 58;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 101:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 109;
+			else if (choice == 'w')
+				room = 100;
+			else if (choice == 'e')
+				room = 102;
+			else if (choice == 'n')
+				room = 59;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 102:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 110;
+			else if (choice == 'w')
+				room = 101;
+			else if (choice == 'e')
+				room = 103;
+			else if (choice == 'n')
+				room = 60;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 103:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 111;
+			else if (choice == 'w')
+				room = 102;
+			else if (choice == 'e')
+				room = 104;
+			else if (choice == 'n')
+				room = 61;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 104:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 112;
+			else if (choice == 'w')
+				room = 103;
+			else if (choice == 'e')
+				room = 105;
+			else if (choice == 'n')
+				room = 62;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 105:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 113;
+			else if (choice == 'w')
+				room = 104;
+			else if (choice == 'n')
+				room = 63;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 106:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 114;
+			else if (choice == 'e')
+				room = 107;
+			else if (choice == 'n')
+				room = 98;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 107:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 115;
+			else if (choice == 'w')
+				room = 106;
+			else if (choice == 'e')
+				room = 108;
+			else if (choice == 'n')
+				room = 99;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 108:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 116;
+			else if (choice == 'w')
+				room = 107;
+			else if (choice == 'e')
+				room = 109;
+			else if (choice == 'n')
+				room = 100;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 109:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 117;
+			else if (choice == 'w')
+				room = 108;
+			else if (choice == 'e')
+				room = 110;
+			else if (choice == 'n')
+				room = 101;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 110:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 118;
+			else if (choice == 'w')
+				room = 109;
+			else if (choice == 'e')
+				room = 111;
+			else if (choice == 'n')
+				room = 102;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 111:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 119;
+			else if (choice == 'w')
+				room = 110;
+			else if (choice == 'e')
+				room = 112;
+			else if (choice == 'n')
+				room = 103;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 112:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 120;
+			else if (choice == 'w')
+				room = 111;
+			else if (choice == 'e')
+				room = 113;
+			else if (choice == 'n')
+				room = 104;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 113:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 121;
+			else if (choice == 'w')
+				room = 112;
+			else if (choice == 'n')
+				room = 105;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 114:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 122;
+			else if (choice == 'e')
+				room = 115;
+			else if (choice == 'n')
+				room = 106;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 115:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 123;
+			else if (choice == 'e')
+				room = 116;
+			else if (choice == 'w')
+				room = 114;
+			else if (choice == 'n')
+				room = 107;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 116:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 124;
+			else if (choice == 'e')
+				room = 115;
+			else if (choice == 'w')
+				room = 117;
+			else if (choice == 'n')
+				room = 108;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 117:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 125;
+			else if (choice == 'e')
+				room = 118;
+			else if (choice == 'w')
+				room = 116;
+			else if (choice == 'n')
+				room = 109;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 118:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 126;
+			else if (choice == 'e')
+				room = 119;
+			else if (choice == 'w')
+				room = 117;
+			else if (choice == 'n')
+				room = 110;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 119:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 127;
+			else if (choice == 'e')
+				room = 120;
+			else if (choice == 'w')
+				room = 118;
+			else if (choice == 'n')
+				room = 111;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 120:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 128;
+			else if (choice == 'e')
+				room = 119;
+			else if (choice == 'w')
+				room = 121;
+			else if (choice == 'n')
+				room = 112;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 121:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 's')
+				room = 808;
+			else if (choice == 'w')
+				room = 120;
+			else if (choice == 'n')
+				room = 113;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 122:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 123;
+			else if (choice == 'n')
+				room = 114;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 123:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 124;
+			else if (choice == 'w')
+				room = 122;
+			else if (choice == 'n')
+				room = 115;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 124:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 125;
+			else if (choice == 'w')
+				room = 123;
+			else if (choice == 'n')
+				room = 116;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 125:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 126;
+			else if (choice == 'w')
+				room = 124;
+			else if (choice == 'n')
+				room = 117;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 126:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 127;
+			else if (choice == 'w')
+				room = 125;
+			else if (choice == 'n')
+				room = 118;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 127:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 128;
+			else if (choice == 'w')
+				room = 126;
+			else if (choice == 'n')
+				room = 119;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 128:
+			cout << "you admire the scenery the small buildings that populate the town. you can go (s)outh,(w)est,(e)ast " << endl;
+			cin >> choice;
+			if (choice == 'e')
+				room = 129;
+			else if (choice == 'w')
+				room = 127;
+			else if (choice == 'n')
+				room = 120;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+		case 129:
+			cout << "NOAH ROOM 808 HES CRASHING OUT HES A GREEN FORTNITE CRASHOUT ON HIS SOUL. you can go (s)outh,(w)est,(e)ast " << endl;
+			cout << "noah is gonna end everyone in the town if he doesnt get a 4.0 GPA and get snowbunnies" << endl;
+			cin >> choice;
+			if (choice == 'w')
+				room = 128;
+			else if (choice == 'n')
+				room = 121;
+			else
+				cout << "i dont understand that" << endl;
+			break;
+
+		
+
+
+
+
+		}
+	} while (choice != 'q');
+}
+
+
